@@ -1,0 +1,10 @@
+{
+    "RES_CLEANUP": true,
+    "PYTHONVENV": "",
+    "MACHINE": "",
+    "TESTSUITE_PATH": "",
+    "TEST_BROWSERS": ["chromium"],
+    "TEST_SHOW_BROWSER": true,
+    "TEST_OS": "",
+    "TEST_COMPOSE": ""
+}
