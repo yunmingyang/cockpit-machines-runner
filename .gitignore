@@ -209,3 +209,6 @@ __marimo__/
 # results
 *check-machines*
 *Test*
+
+# config
+*.json

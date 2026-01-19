@@ -42,7 +42,7 @@ def run_command(command: str,
                              shell=True)
 
         while True:
-            line = p.stdout.readline()
+            line = p.stdout.read()
 
             if not line and p.poll() is not None:
                 break
@@ -92,8 +92,8 @@ def run_tests(conf: dict):
         else:
             raise Exception(f"search test suites failed - ts_list: {ts_list}")
 
-    command_pre = (f"TEST_SHOW_BROWSER={conf['TEST_SHOW_BROWSER']} "
-                   f"TEST_OS={conf['TEST_OS']} "
+    command_pre = ((f"TEST_SHOW_BROWSER={conf['TEST_SHOW_BROWSER']} " if conf['TEST_SHOW_BROWSER'] else "") +
+                   f"TEST_OS={conf['TEST_OS']} " +
                    "test/")
     for b in conf['TEST_BROWSERS']:
         if os.path.isdir(conf['TESTSUITE_PATH']):
